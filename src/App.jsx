@@ -1,5 +1,6 @@
 import "./App.css";
 import PaginaPergunta from "./pages/PaginaPergunta/PaginaPergunta";
+import PaginaNovaFase from "./pages/PaginaNovaFase/PaginaNovaFase";
 
 function App() {
   const questao = {
@@ -9,7 +10,8 @@ function App() {
 
   return (
     <>
-      <PaginaPergunta questao={questao} />
+      {/* <PaginaPergunta questao={questao} /> */}
+      <PaginaNovaFase />
     </>
   );
 }
