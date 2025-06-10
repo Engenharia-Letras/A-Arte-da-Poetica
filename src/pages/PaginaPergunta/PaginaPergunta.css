@@ -1,0 +1,48 @@
+.pagina-pergunta-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.alternativas {
+  margin-top: 2em;
+  width: 70%;
+  display: flex;
+}
+
+.coluna {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  width: 50%;
+}
+
+.coluna-esquerda {
+  align-items: end;
+}
+
+.icone-sair {
+  position: absolute;
+  top: 1.5em;
+  left: 1.5em;
+
+  width: 4em;
+  height: auto;
+
+  cursor: pointer;
+}
+
+.icone-avancar {
+  position: absolute;
+  bottom: 1.5em;
+  right: 1.5em;
+
+  width: 8em;
+  height: auto;
+
+  cursor: pointer;
+}
