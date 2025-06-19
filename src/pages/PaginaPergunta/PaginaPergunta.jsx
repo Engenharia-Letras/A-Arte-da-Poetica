@@ -74,12 +74,14 @@ const PaginaPergunta = ({ questao, onAvancar }) => {
           />
         </div>
       </div>
-      <img
-        src={Seta}
-        alt="Ícone para Avançar para a Próxima Pergunta"
-        className="icone-avancar"
-        onClick={onAvancar}
-      />
+      {temResposta && (
+        <img
+          src={Seta}
+          alt="Ícone para Avançar para a Próxima Pergunta"
+          className="icone-avancar"
+          onClick={onAvancar}
+        />
+      )}
     </div>
   );
 };
