@@ -1,17 +1,34 @@
 import "./App.css";
 import PaginaPergunta from "./pages/PaginaPergunta/PaginaPergunta";
 import PaginaNovaFase from "./pages/PaginaNovaFase/PaginaNovaFase";
+import { useState } from "react";
+import questoes from "./data/questoes.json";
 
 function App() {
-  const questao = {
-    comando: "Identifique a escola literária a que pertence:",
-    alternativas: ["Romantismo", "Simbolismo", "Modernismo", "Realismo"],
+  const [indiceQuestao, setIndiceQuestao] = useState(0);
+  const [mostrarTelaNovaFase, setMostrarTelaNovaFase] = useState(false);
+  const questaoAtual = questoes[indiceQuestao];
+
+  const handleAvancar = () => {
+    if (mostrarTelaNovaFase) {
+      setMostrarTelaNovaFase(false);
+      setIndiceQuestao(indiceQuestao + 1);
+    } else {
+      if (indiceQuestao < questoes.length - 1) {
+        setMostrarTelaNovaFase(true);
+      } else {
+        alert("Fim do Quiz! Parabéns!");
+      }
+    }
   };
 
   return (
     <>
-      {/* <PaginaPergunta questao={questao} /> */}
-      <PaginaNovaFase />
+      {mostrarTelaNovaFase ? (
+        <PaginaNovaFase onAvancar={handleAvancar} />
+      ) : (
+        <PaginaPergunta questao={questaoAtual} onAvancar={handleAvancar} />
+      )}
     </>
   );
 }
