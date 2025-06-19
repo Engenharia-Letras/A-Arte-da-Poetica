@@ -1,0 +1,52 @@
+[
+  {
+    "comando": "Identifique a escola literária a que pertence:",
+    "alternativas": ["Romantismo", "Simbolismo", "Modernismo", "Realismo"],
+    "resposta": "Romantismo"
+  },
+  {
+    "comando": "Qual o tipo de rima presente no poema?",
+    "alternativas": [
+      "Rima interna",
+      "Rima emparelhada",
+      "Rima alternada",
+      "Rima cruzada"
+    ],
+    "resposta": "Rima cruzada"
+  },
+  {
+    "comando": "Qual é a métrica do poema?",
+    "alternativas": [
+      "Decassílabo",
+      "Heptassílabo",
+      "Hexassílabo",
+      "Alexandrino"
+    ],
+    "resposta": "Heptassílabo"
+  },
+  {
+    "comando": "Qual é a figura de linguagem predominante no verso?",
+    "alternativas": ["Metáfora", "Antítese", "Metonímia", "Hipérbole"],
+    "resposta": "Antítese"
+  },
+  {
+    "comando": "Qual é o tema principal do poema \"Canção do Exílio\" de Gonçalves Dias?",
+    "alternativas": [
+      "Saudade da pátria",
+      "Natureza exuberante",
+      "Amor Romântico",
+      "Luta pela liberdade"
+    ],
+    "resposta": "Saudade da pátria"
+  },
+  {
+    "comando": "Qual é a estrutura de um soneto?",
+    "alternativas": [
+      "Dois quartetos e dois tercetos",
+      "Natureza exuberante",
+      "Três quartetos e um dístico",
+      "Dois tercetos e dois quartetos"
+    ],
+    "resposta": "Dois quartetos e dois tercetos"
+  }
+]
