@@ -1,52 +1,102 @@
 [
   {
+    "texto": "\"Minha terra tem palmeiras, onde canta o sabiá.\"",
     "comando": "Identifique a escola literária a que pertence:",
-    "alternativas": ["Romantismo", "Simbolismo", "Modernismo", "Realismo"],
-    "resposta": "Romantismo"
+    "alternativas": ["Romantismo", "Modernismo", "Simbolismo", "Realismo"],
+    "resposta": "Romantismo",
+    "fimDeFase": false
   },
   {
+    "texto": "\"Rosa amarela, flor singela, No jardim floresce, e enaltece.\"",
     "comando": "Qual o tipo de rima presente no poema?",
     "alternativas": [
       "Rima interna",
-      "Rima emparelhada",
       "Rima alternada",
+      "Rima emparelhada",
       "Rima cruzada"
     ],
-    "resposta": "Rima cruzada"
+    "resposta": "Rima emparelhada",
+    "fimDeFase": false
   },
   {
+    "texto": "\"No meio do caminho tinha uma pedra Tinha uma pedra no meio do caminho.\"",
     "comando": "Qual é a métrica do poema?",
     "alternativas": [
       "Decassílabo",
-      "Heptassílabo",
       "Hexassílabo",
+      "Heptassílabo",
       "Alexandrino"
     ],
-    "resposta": "Heptassílabo"
+    "resposta": "Heptassílabo",
+    "fimDeFase": false
   },
   {
+    "texto": "\"O amor é fogo que arde sem se ver\"",
     "comando": "Qual é a figura de linguagem predominante no verso?",
-    "alternativas": ["Metáfora", "Antítese", "Metonímia", "Hipérbole"],
-    "resposta": "Antítese"
+    "alternativas": ["Metáfora", "Metonímia", "Antítese", "Hipérbole"],
+    "resposta": "Metáfora",
+    "fimDeFase": false
   },
   {
+    "texto": null,
     "comando": "Qual é o tema principal do poema \"Canção do Exílio\" de Gonçalves Dias?",
     "alternativas": [
       "Saudade da pátria",
+      "Amor romântico",
       "Natureza exuberante",
-      "Amor Romântico",
       "Luta pela liberdade"
     ],
-    "resposta": "Saudade da pátria"
+    "resposta": "Saudade da pátria",
+    "fimDeFase": true
   },
   {
+    "texto": "\"Vós que em rimas, brotando ao coração, Ouvistes dos suspiros o rumor Do meu primeiro e juvenil error, Quando era outra a minha condição;\"",
     "comando": "Qual é a estrutura de um soneto?",
     "alternativas": [
       "Dois quartetos e dois tercetos",
-      "Natureza exuberante",
       "Três quartetos e um dístico",
+      "Quatro quartetos",
       "Dois tercetos e dois quartetos"
     ],
-    "resposta": "Dois quartetos e dois tercetos"
+    "resposta": "Dois quartetos e dois tercetos",
+    "fimDeFase": false
+  },
+  {
+    "texto": "\"A lua brilha no céu, As estrelas a acompanhar, No silêncio da noite, Começo a sonhar.\"",
+    "comando": "Qual é o tipo de estrofe presente no poema?",
+    "alternativas": ["Terceto", "Quarteto", "Quintilha", "Sextilha"],
+    "resposta": "Quarteto",
+    "fimDeFase": false
+  },
+  {
+    "texto": null,
+    "comando": "Qual é a principal característica do Simbolismo?",
+    "alternativas": [
+      "Uso de símbolos e sinestesias",
+      "Exaltação da natureza",
+      "Crítica social",
+      "Valorização da razão"
+    ],
+    "resposta": "Uso de símbolos e sinestesias",
+    "fimDeFase": false
+  },
+  {
+    "texto": "\"Vozes veladas, veludosas vozes\"",
+    "comando": "Qual é a função da aliteração no verso?",
+    "alternativas": [
+      "Criar musicalidade",
+      "Destacar um conceito",
+      "Contrapor ideias",
+      "Exagerar uma característica"
+    ],
+    "resposta": "Criar musicalidade",
+    "fimDeFase": false
+  },
+  {
+    "texto": null,
+    "comando": "Qual é o tipo de poema que não possui rima nem métrica fixa?",
+    "alternativas": ["Soneto", "Haicai", "Verso livre", "Ode"],
+    "resposta": "Verso livre",
+    "fimDeFase": false
   }
 ]
