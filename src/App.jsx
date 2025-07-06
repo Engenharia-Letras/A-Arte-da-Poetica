@@ -3,34 +3,84 @@ import PaginaPergunta from "./pages/PaginaPergunta/PaginaPergunta";
 import PaginaNovaFase from "./pages/PaginaNovaFase/PaginaNovaFase";
 import { useState } from "react";
 import questoes from "./data/questoes.json";
+import PaginaLivro from "./pages/PaginaLivro/PaginaLivro";
+
+const getEtapaInicial = () => {
+  return questoes[0]?.texto ? "livro" : "pergunta";
+};
 
 function App() {
-  const [indiceQuestao, setIndiceQuestao] = useState(0);
-  const [mostrarTelaNovaFase, setMostrarTelaNovaFase] = useState(false);
-  const questaoAtual = questoes[indiceQuestao];
+  const [indiceAtual, setIndiceAtual] = useState(0);
+  const [etapaAtual, setEtapaAtual] = useState(getEtapaInicial());
 
-  const handleAvancar = () => {
-    if (mostrarTelaNovaFase) {
-      setMostrarTelaNovaFase(false);
-      setIndiceQuestao(indiceQuestao + 1);
+  const questaoAtual = questoes[indiceAtual];
+
+  const handleFecharJogo = () => {
+    alert("O jogo será reiniciado.");
+    setIndiceAtual(0);
+    setEtapaAtual(getEtapaInicial());
+  };
+
+  const avancarParaProximoItem = () => {
+    const proximoIndice = indiceAtual + 1;
+
+    if (proximoIndice >= questoes.length) {
+      alert("Parabéns, você chegou ao final do jogo!");
+      handleFecharJogo();
+      return;
+    }
+
+    setIndiceAtual(proximoIndice);
+    const proximaQuestao = questoes[proximoIndice];
+    setEtapaAtual(proximaQuestao.texto ? "livro" : "pergunta");
+  };
+
+  const handleIrParaPergunta = () => {
+    setEtapaAtual("pergunta");
+  };
+
+  const handleAvancarDaPergunta = () => {
+    if (questaoAtual.fimDeFase) {
+      setEtapaAtual("novaFase");
     } else {
-      if (indiceQuestao < questoes.length - 1) {
-        setMostrarTelaNovaFase(true);
-      } else {
-        alert("Fim do Quiz! Parabéns!");
-      }
+      avancarParaProximoItem();
     }
   };
 
-  return (
-    <>
-      {mostrarTelaNovaFase ? (
-        <PaginaNovaFase onAvancar={handleAvancar} />
-      ) : (
-        <PaginaPergunta questao={questaoAtual} onAvancar={handleAvancar} />
-      )}
-    </>
-  );
+  const handleAvancarDaNovaFase = () => {
+    avancarParaProximoItem();
+  };
+
+  switch (etapaAtual) {
+    case "livro":
+      return (
+        <PaginaLivro
+          texto={questaoAtual.texto}
+          onProximo={handleIrParaPergunta}
+          onFechar={handleFecharJogo}
+        />
+      );
+
+    case "pergunta":
+      return (
+        <PaginaPergunta
+          questao={questaoAtual}
+          onAvancar={handleAvancarDaPergunta}
+          onFechar={handleFecharJogo}
+        />
+      );
+
+    case "novaFase":
+      return (
+        <PaginaNovaFase
+          onAvancar={handleAvancarDaNovaFase}
+          onFechar={handleFecharJogo}
+        />
+      );
+
+    default:
+      return null;
+  }
 }
 
 export default App;
