@@ -5,7 +5,7 @@ import Sair from "../../assets/Sair.png";
 import Seta from "../../assets/Seta.png";
 import { useState, useEffect } from "react";
 
-const PaginaPergunta = ({ questao, onAvancar }) => {
+const PaginaPergunta = ({ questao, onAvancar, onFechar }) => {
   const [alternativaSelecionada, setAlternativaSelecionada] = useState(null);
 
   useEffect(() => {
@@ -42,7 +42,12 @@ const PaginaPergunta = ({ questao, onAvancar }) => {
 
   return (
     <div className="pagina-pergunta-container">
-      <img src={Sair} alt="Ícone para Sair do Jogo" className="icone-sair" />
+      <img
+        src={Sair}
+        alt="Ícone para Sair do Jogo"
+        className="icone-sair"
+        onClick={onFechar}
+      />
       <CaixaPergunta pergunta={questao.comando} />
       <div className="alternativas">
         <div className="coluna">

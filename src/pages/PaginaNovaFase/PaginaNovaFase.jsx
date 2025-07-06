@@ -3,10 +3,15 @@ import Fada from "../../assets/Fada.png";
 import Sair from "../../assets/Sair.png";
 import Seta from "../../assets/Seta.png";
 
-const PaginaNovaFase = ({ onAvancar }) => {
+const PaginaNovaFase = ({ onAvancar, onFechar }) => {
   return (
     <div className="pagina-nova-fase-container">
-      <img src={Sair} alt="Ícone para Sair do Jogo" className="icone-sair" />
+      <img
+        src={Sair}
+        alt="Ícone para Sair do Jogo"
+        className="icone-sair"
+        onClick={onFechar}
+      />
       <span className="quadro-central">
         NOVA FASE
         <img src={Fada} alt="Imagem de uma fada" className="imagem-fada" />
