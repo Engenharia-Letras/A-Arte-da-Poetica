@@ -1,0 +1,56 @@
+.pagina-inicial {
+  min-height: 100vh;
+  width: 100%;
+  background: #b9ad8f;              
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.pagina-inicial h1 {
+  position: absolute;
+  top: 6vh;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  margin: 0;
+  line-height: 1.1;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  color: #efe4c6;                    
+  font-size: clamp(2rem, 6vw, 4rem); 
+}
+
+.pagina-inicial .play-container {
+  width: min(60vw, 520px);
+  margin-top: 100px;
+  aspect-ratio: 1 / 1;               
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagina-inicial .play-imagem {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.pagina-inicial .play-imagem:hover {
+  transform: scale(1.03);
+  filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.25));
+}
+
+.pagina-inicial .icone-castelo {
+  position: absolute;
+  bottom: 4vh;
+  left: 6vw;
+  width: clamp(110px, 18vw, 240px);
+  height: auto;
+  object-fit: contain;
+  pointer-events: none; 
+}

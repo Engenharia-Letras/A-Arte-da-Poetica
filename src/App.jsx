@@ -4,21 +4,28 @@ import PaginaNovaFase from "./pages/PaginaNovaFase/PaginaNovaFase";
 import { useState } from "react";
 import questoes from "./data/questoes.json";
 import PaginaLivro from "./pages/PaginaLivro/PaginaLivro";
+import PaginaInicial from "./pages/PaginaInicial/PaginaInicial";
 
-const getEtapaInicial = () => {
-  return questoes[0]?.texto ? "livro" : "pergunta";
-};
+const getEtapaInicial = () => "inicio";
 
 function App() {
   const [indiceAtual, setIndiceAtual] = useState(0);
   const [etapaAtual, setEtapaAtual] = useState(getEtapaInicial());
+  //const [numTentativas, setNumTentativas] = useState(0); 
 
   const questaoAtual = questoes[indiceAtual];
+
+  const handleIniciar = () => {
+    setIndiceAtual(0);
+    setNumTentativas(0);
+    setEtapaAtual("livro"); 
+  };
 
   const handleFecharJogo = () => {
     alert("O jogo será reiniciado.");
     setIndiceAtual(0);
-    setEtapaAtual(getEtapaInicial());
+    setNumTentativas(0);
+    setEtapaAtual(getEtapaInicial()); 
   };
 
   const avancarParaProximoItem = () => {
@@ -26,11 +33,12 @@ function App() {
 
     if (proximoIndice >= questoes.length) {
       alert("Parabéns, você chegou ao final do jogo!");
-      handleFecharJogo();
+      handleFecharJogo(); 
       return;
     }
 
     setIndiceAtual(proximoIndice);
+    setNumTentativas(0);
     const proximaQuestao = questoes[proximoIndice];
     setEtapaAtual(proximaQuestao.texto ? "livro" : "pergunta");
   };
@@ -52,10 +60,13 @@ function App() {
   };
 
   switch (etapaAtual) {
+    case "inicio":
+      return <PaginaInicial onPlay={handleIniciar} />;
+
     case "livro":
       return (
         <PaginaLivro
-          texto={questaoAtual.texto}
+          texto={questaoAtual.texto}      
           onProximo={handleIrParaPergunta}
           onFechar={handleFecharJogo}
         />
