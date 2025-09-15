@@ -11,20 +11,17 @@ const getEtapaInicial = () => "inicio";
 function App() {
   const [indiceAtual, setIndiceAtual] = useState(0);
   const [etapaAtual, setEtapaAtual] = useState(getEtapaInicial());
-  //const [numTentativas, setNumTentativas] = useState(0); 
 
   const questaoAtual = questoes[indiceAtual];
 
   const handleIniciar = () => {
     setIndiceAtual(0);
-    setNumTentativas(0);
     setEtapaAtual("livro"); 
   };
 
   const handleFecharJogo = () => {
     alert("O jogo será reiniciado.");
     setIndiceAtual(0);
-    setNumTentativas(0);
     setEtapaAtual(getEtapaInicial()); 
   };
 
@@ -38,7 +35,6 @@ function App() {
     }
 
     setIndiceAtual(proximoIndice);
-    setNumTentativas(0);
     const proximaQuestao = questoes[proximoIndice];
     setEtapaAtual(proximaQuestao.texto ? "livro" : "pergunta");
   };
