@@ -1,7 +1,7 @@
 import "./PaginaLivro.css";
 import imagemLivro from "../../assets/livro_aberto.png";
-import Sair from "../../assets/sair.png";
-import Seta from "../../assets/seta.png";
+import Sair from "../../assets/Sair.png";
+import Seta from "../../assets/Seta.png";
 
 const PaginaLivro = ({ texto, onFechar, onProximo }) => {
   return (
