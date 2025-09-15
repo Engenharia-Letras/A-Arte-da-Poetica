@@ -11,7 +11,7 @@ const getEtapaInicial = () => "inicio";
 function App() {
   const [indiceAtual, setIndiceAtual] = useState(0);
   const [etapaAtual, setEtapaAtual] = useState(getEtapaInicial());
-  //const [numTentativas, setNumTentativas] = useState(0); 
+  const [numTentativas, setNumTentativas] = useState(0); 
 
   const questaoAtual = questoes[indiceAtual];
 
